@@ -1,0 +1,21 @@
+{
+  "name": "iem-planning-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:colpiche/IEM-planning-Discord-bot.git"
+  },
+  "author": "Colin BERNARD",
+  "license": "ISC",
+  "homepage": "https://github.com/colpiche/IEM-planning-Discord-bot",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.1.0",
+    "jsdom": "^22.1.0"
+  }
+}

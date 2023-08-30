@@ -1,0 +1,80 @@
+module.exports = {
+    courses: [
+        {
+            code: 'USRS5L',
+            name: 'Conception 3D'
+        },
+        {
+            code: 'URIMP2',
+            name: 'Travail personnel non encadré Fisa IEM Année 2'
+        },
+        {
+            code: 'USRS5P',
+            name: 'Electronique numérique'
+        },
+        {
+            code: 'USRS5Q',
+            name: 'Atelier objets connectés'
+        },
+        {
+            code: 'USRS5W',
+            name: 'Projet en entreprise S3'
+        },
+        {
+            code: 'URIMA2',
+            name: 'Atelier alternance Fisa IEM Année 2'
+        },
+        {
+            code: 'USRS5S',
+            name: 'Gestion de projet 2'
+        },
+        {
+            code: 'USRS5M',
+            name: 'Moteurs de jeux'
+        },
+        {
+            code: 'USRS5V',
+            name: 'Anglais 2'
+        },
+        {
+            code: 'USRS5N',
+            name: 'Synthèse sonore'
+        },
+        {
+            code: 'USRS5R',
+            name: 'Management relationnel'
+        },
+        {
+            code: 'USRS5K',
+            name: 'Synthèse d\'images'
+        },
+        {
+            code: 'USRS5T',
+            name: 'Communication - Expression 2'
+        },
+        {
+            code: 'USRS5Z',
+            name: 'Architecture des systèmes informatiques 2'
+        },
+        {
+            code: 'USRS5X',
+            name: 'Conception et développement informatique pour le jeu vidéo'
+        },
+        {
+            code: 'USRS62',
+            name: 'Gestion de projet 3'
+        },
+        {
+            code: 'USRS60',
+            name: 'Bases de données'
+        },
+        {
+            code: 'USRS5Y',
+            name: 'Systèmes d\'interaction'
+        },
+        {
+            code: 'USRS64',
+            name: 'Projet en entreprise S4'
+        }
+    ]
+}
