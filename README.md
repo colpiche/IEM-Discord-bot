@@ -12,4 +12,5 @@ Then you'll need to tweak some files a little bit, because some of the variables
 Rename the file `config.example.json` to `config.json` and update the variables inside. To find them, see [this page for the token](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot) and [this page for the IDs](https://discordjs.guide/creating-your-bot/command-deployment.html#guild-commands).
 
 ### .env file (environment variables)
-Rename the file `example.env` to `.env` and update the URL the bot will visit to grab the planning. It's the page displaying only one week of the planning, given by the QR code available in the regular planning page.
+Rename the file `example.env` to `.env` and update the URL the bot will visit to grab the planning. It's the page displaying only one week of the planning, given by the QR code available in the regular planning page. The page looks like this :<br />
+![Web page to scrap](img/page-web.jpg "Web page to scrap")
