@@ -14,3 +14,11 @@ Rename the file `config.example.json` to `config.json` and update the variables 
 ### .env file (environment variables)
 Rename the file `example.env` to `.env` and update the URL the bot will visit to grab the planning. It's the page displaying only one week of the planning, given by the QR code available in the regular planning page. The page looks like this :<br />
 ![Web page to scrap](img/page-web.jpg "Web page to scrap")
+
+## Deployment with Docker
+
+ - Clone the repo on your server and `cd` into it
+ - Add the `.env` and the `config.json` files
+ - Build the image : `docker build . -t iem-discord-bot`
+ - Run the image : `docker run -d iem-discord-bot`
+ 
