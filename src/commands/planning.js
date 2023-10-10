@@ -45,6 +45,8 @@ module.exports = {
 
 	formatMessage(planningTable) {
 		let message = '';
+		const blankErrorMessage = '-------------- Erreur --------------\n';
+		let errorMessage = blankErrorMessage;
 		const spans = planningTable.querySelectorAll('span, a');
 
 		spans.forEach(span => {
@@ -73,7 +75,11 @@ module.exports = {
 			case 'lblEvtUE':
 				// UE
 				const course = Constants.courses.find((obj) => obj.code == textContent);
-				textContent = course.name;
+				try {
+					textContent = course.name;
+				} catch (error) {
+					errorMessage += `Cours ${textContent} : code non trouvé dans la base. Mettre à jour le fichier constants.json\n`;
+				}
 				// falls through
 			default:
 				message += ` ${textContent}`;
@@ -81,6 +87,10 @@ module.exports = {
 			}
 		});
 
-		return message;
+		if (errorMessage == blankErrorMessage) {
+			return message;
+		} else {
+			return message + '\n\n\n' + errorMessage;
+		}
 	},
 };
