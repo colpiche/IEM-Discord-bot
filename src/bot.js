@@ -30,7 +30,7 @@ for (const file of commandFiles) {
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
 client.once(Events.ClientReady, c => {
-	console.log(`Ready! Logged in as ${c.user.tag}`);
+	console.log(`${currentDate()} : Ready! Logged in as ${c.user.tag}`);
 });
 
 
@@ -44,8 +44,7 @@ client.on(Events.InteractionCreate, async interaction => {
 
 	const command = interaction.client.commands.get(interaction.commandName);
 
-	const time = new Date();
-	console.log(`${time.toLocaleString()} : ${interaction.member.displayName} triggered the /${interaction.commandName} command.`);
+	console.log(`${currentDate()} : ${interaction.member.displayName} triggered the /${interaction.commandName} command.`);
 
 	if (!command) {
 		console.error(`No command matching ${interaction.commandName} was found.`);
@@ -61,3 +60,8 @@ client.on(Events.InteractionCreate, async interaction => {
 		}
 	}
 });
+
+function currentDate() {
+	const date = new Date();
+	return date.toLocaleString();
+}
