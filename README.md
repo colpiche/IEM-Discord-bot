@@ -19,6 +19,6 @@ Rename the file `example.env` to `.env` and update the URL the bot will visit to
 
  - Clone the repo on your server and `cd` into it
  - Add the `.env` and the `config.json` files
- - Build the image : `docker build . -t iem-discord-bot`
- - Run the image : `docker run -d iem-discord-bot`
+ - Build the image : `docker build . -t iem-discord-bot:latest`
+ - Run the image : `docker run -d --name iem-discord-bot iem-discord-bot:latest`
  
