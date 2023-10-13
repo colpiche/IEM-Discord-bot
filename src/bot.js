@@ -44,6 +44,9 @@ client.on(Events.InteractionCreate, async interaction => {
 
 	const command = interaction.client.commands.get(interaction.commandName);
 
+	const time = new Date();
+	console.log(`${time.toLocaleString()} : ${interaction.member.displayName} triggered the /${interaction.commandName} command.`);
+
 	if (!command) {
 		console.error(`No command matching ${interaction.commandName} was found.`);
 		return;
