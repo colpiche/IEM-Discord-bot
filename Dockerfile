@@ -15,4 +15,4 @@ RUN npm ci --omit=dev
 # Bundle app source
 COPY . .
 
-CMD node src/bot.js
+CMD node src/index.js
