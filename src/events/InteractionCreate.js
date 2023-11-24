@@ -1,7 +1,6 @@
 const { Events } = require('discord.js');
 const { currentDate } = require('../utils/date.js');
 
-//  Receiving command interactions
 module.exports = {
 	name: Events.InteractionCreate,
 	async execute(interaction) {
