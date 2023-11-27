@@ -80,5 +80,15 @@
             "code": "USRS61",
             "name": "Projet pluridisciplinaire"
         }
+    ],
+    "students": [
+        "Colin",
+        "Jame",
+        "Wilfried",
+        "Ewen",
+        "Lucas",
+        "Pierre-Baptiste",
+        "Antoine",
+        "Pierre"
     ]
 }
