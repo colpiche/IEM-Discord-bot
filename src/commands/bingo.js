@@ -7,10 +7,10 @@ module.exports = {
 		.setDescription('Turbo bingo !'),
 
 	async execute(interaction) {
-		await interaction.deferReply();
+		await interaction.reply({ content: 'Check your DM', ephemeral: true });
 		const grid = this.createGrid();
 		const msg = this.formatMessage(grid, interaction);
-		await interaction.editReply(msg);
+		await interaction.member.send(msg);
 	},
 
 	createGrid() {
