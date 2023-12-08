@@ -27,7 +27,7 @@ module.exports = {
 	},
 
 	formatMessage(grid, interaction) {
-		let msg = `Grille pour ${interaction.member.displayName}\n`;
+		let msg = `<@${interaction.member.id}> voici ta grille :\n`;
 		msg += '------\n';
 
 		for (let i = 0; i < 3; i++) {
