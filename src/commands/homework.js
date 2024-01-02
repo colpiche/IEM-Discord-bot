@@ -13,16 +13,14 @@ module.exports = {
 	},
 
 	async computeHomework(interaction) {
-		await interaction.client.channels.fetch(config.homeworkChannelId)
-			.then(channel => {
-				channel.threads.fetch()
-					.then(threads => {
-						const upcomingThreads = this.filterThreads(threads.threads);
-						const threadsNames = upcomingThreads.map(thread => `${thread.name}`).join('\n');
-						const threadsLinks = upcomingThreads.map(thread => `<#${thread.id}>`).join('\n');
-						interaction.editReply(`${threadsNames}\n\n${threadsLinks}`);
-					});
-			});
+		const homeworkChannel = await interaction.client.channels.fetch(config.homeworkChannelId);
+		const currentThreads = await homeworkChannel.threads.fetch();
+		const archivedThreads = await homeworkChannel.threads.fetchArchived();
+		const threads = currentThreads.threads.concat(archivedThreads.threads);
+		const upcomingThreads = this.filterThreads(threads);
+		const threadsNames = upcomingThreads.map(thread => `${thread.name}`).join('\n');
+		const threadsLinks = upcomingThreads.map(thread => `<#${thread.id}>`).join('\n');
+		interaction.editReply(`${threadsNames}\n\n${threadsLinks}`);
 	},
 
 	filterThreads(threads) {
