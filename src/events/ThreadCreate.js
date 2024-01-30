@@ -1,6 +1,6 @@
 const { Events } = require('discord.js');
 const dedent = require('dedent');
-const { currentDate } = require('../utils/date.js');
+const { log } = require('../utils/log.js');
 const config = require('../config.json');
 
 module.exports = {
@@ -8,14 +8,14 @@ module.exports = {
 	async execute(thread) {
 		if (thread.parent.id == config.homeworkChannelId) {
 			const threadName = thread.name;
-			console.log(`${currentDate()} : Thread "${threadName}" was created in "${thread.parent.name}" channel`);
+			log(`Thread "${threadName}" was created in "${thread.parent.name}" channel`);
 
 			// https://www.freecodecamp.org/news/regex-for-date-formats-what-is-the-regular-expression-for-matching-dates/
 			// Expected format = "DD-MM-YYYY - Course : Detail"
 			const regex = /(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[1,2])-(19|20)\d{2} - [^ :][^:]+ \: [^:]+/;
 
 			if (!threadName.match(regex)) {
-				console.log(`${currentDate()} : Thread's name "${threadName}" doesn't match the regex.`);
+				log(`Thread's name "${threadName}" doesn't match the regex.`);
 				const ownerId = thread.ownerId;
 
 				thread.client.users.fetch(ownerId)
@@ -23,7 +23,7 @@ module.exports = {
 						user.send(this.message(thread));
 						thread.delete('Deleting thread with incorrect name')
 							.then(deletedThread => {
-								console.log(`${currentDate()} : Thread "${deletedThread.name}" deleted because of incorrect name.`);
+								log(`Thread "${deletedThread.name}" deleted because of incorrect name.`);
 							})
 							.catch(console.error);
 					})

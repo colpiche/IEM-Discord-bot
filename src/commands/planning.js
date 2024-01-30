@@ -4,7 +4,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
 const Constants = require('../constants.json');
-const { currentDate } = require('../utils/date.js');
+const { log } = require('../utils/log.js');
 
 
 // Run dotenv
@@ -32,7 +32,7 @@ module.exports = {
 				interaction.editReply(message);
 			})
 			.catch(function(error) {
-				console.log(`${currentDate()} : ${error}`);
+				log(`${error}`);
 				interaction.editReply(error.stack);
 			});
 	},
