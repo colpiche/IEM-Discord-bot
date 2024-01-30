@@ -4,6 +4,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
 const Constants = require('../constants.json');
+const { currentDate } = require('../utils/date.js');
 
 
 // Run dotenv
@@ -27,26 +28,29 @@ module.exports = {
 			})
 			.then(function(html) {
 				const dom = new JSDOM(html);
-				const planningTable = module.exports.extractPlanningTable(dom);
-				const message = module.exports.formatMessage(planningTable);
+				const message = module.exports.formatMessage(dom);
 				interaction.editReply(message);
 			})
 			.catch(function(error) {
-				console.log(`error : ${error}`);
+				console.log(`${currentDate()} : ${error}`);
+				interaction.editReply(error.stack);
 			});
 	},
 
 
-	extractPlanningTable(dom) {
-		const planningTable = dom.window.document.getElementsByClassName('PlanningEvtContainer').item(0);
-		return planningTable;
-	},
-
-
-	formatMessage(planningTable) {
-		let message = '';
+	formatMessage(dom) {
 		const blankErrorMessage = '-------------- Erreur --------------\n';
 		let errorMessage = blankErrorMessage;
+		let message = '';
+
+		let planningTable;
+
+		try {
+			planningTable = dom.window.document.getElementsByClassName('PlanningEvtContainer').item(0);
+		} catch (error) {
+			return error;
+		}
+
 		const spans = planningTable.querySelectorAll('span, a');
 
 		spans.forEach(span => {
