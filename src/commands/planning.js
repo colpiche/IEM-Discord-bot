@@ -22,7 +22,27 @@ module.exports = {
 	},
 
 	async sendPlanning(interaction) {
-		fetch(process.env.CALENDAR_URL)
+		const bodyContent = JSON.stringify(
+			{
+				'__EVENTTARGET': '__Page',
+				'__EVENTARGUMENT': 'ViewDate',
+				'ctl00$MainContent$hfPostData': '26/02/2024',
+			});
+
+		// bodyContent = bodyContent.replaceAll('\{', '');
+		// bodyContent = bodyContent.replaceAll('\}', '');
+		// bodyContent = bodyContent.replaceAll('\"', '');
+		// bodyContent = bodyContent.replaceAll('\:', '=');
+		// bodyContent = bodyContent.replaceAll('\,', '&');
+
+		fetch(process.env.CALENDAR_URL, {
+			method: 'POST',
+			body: bodyContent,
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+			},
+		})
 			.then(function(response) {
 				return response.text();
 			})
@@ -32,8 +52,8 @@ module.exports = {
 				interaction.editReply(message);
 			})
 			.catch(function(error) {
-				console.log(`${currentDate()} : ${error}`);
-				interaction.editReply(error.stack);
+				console.log(`${currentDate()} : Error fetching url : ${error}`);
+				interaction.editReply(`Error fetching url : ${error.stack}`);
 			});
 	},
 
