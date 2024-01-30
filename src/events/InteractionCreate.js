@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-const { currentDate } = require('../utils/date.js');
+const { log } = require('../utils/log.js');
 
 module.exports = {
 	name: Events.InteractionCreate,
@@ -8,7 +8,7 @@ module.exports = {
 
 		const command = interaction.client.commands.get(interaction.commandName);
 
-		console.log(`${currentDate()} : ${interaction.member.displayName} triggered the /${interaction.commandName} command.`);
+		log(`${interaction.member.displayName} triggered the /${interaction.commandName} command.`);
 
 		if (!command) {
 			console.error(`No command matching ${interaction.commandName} was found.`);
