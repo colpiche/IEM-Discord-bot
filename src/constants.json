@@ -79,6 +79,10 @@
         {
             "code": "USRS61",
             "name": "Projet pluridisciplinaire"
+        },
+        {
+            "code": "URIME2",
+            "name": "Evènement Fisa IEM Année 2"
         }
     ],
     "students": [
