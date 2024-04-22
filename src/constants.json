@@ -83,6 +83,10 @@
         {
             "code": "URIME2",
             "name": "Evènement Fisa IEM Année 2"
+        },
+        {
+            "code": "URIMT2",
+            "name": "Tutorat Fisa IEM Année 2"
         }
     ],
     "students": [
