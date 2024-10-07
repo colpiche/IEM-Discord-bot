@@ -87,6 +87,62 @@
         {
             "code": "URIMT2",
             "name": "Tutorat Fisa IEM Année 2"
+        },
+        {
+            "code": "USRS65",
+            "name": "Gestion de projet 3"
+        },
+        {
+            "code": "URIMP3",
+            "name": "Travail personnel non encadré Fisa IEM Année 3"
+        },
+        {
+            "code": "USRS6B",
+            "name": "Créer et gérer une PME"
+        },
+        {
+            "code": "USRS6E",
+            "name": "Ville intelligente"
+        },
+        {
+            "code": "USRS6A",
+            "name": "Responsabilité globale"
+        },
+        {
+            "code": "USRS66",
+            "name": "Anglais"
+        },
+        {
+            "code": "USRS6H",
+            "name": "Initiation à la recherche"
+        },
+        {
+            "code": "URTI02",
+            "name": "TOEIC 2 Fisa IEM"
+        },
+        {
+            "code": "USRS6G",
+            "name": "Psychologie et sociologie des usages pour les médias numériques"
+        },
+        {
+            "code": "USRS6C",
+            "name": "Simulateur et simulation"
+        },
+        {
+            "code": "USRS68",
+            "name": "Communication - Expression"
+        },
+        {
+            "code": "URIME3",
+            "name": "Evènementiel Fisa IEM Année 3"
+        },
+        {
+            "code": "USRS6D",
+            "name": "Design Interactif"
+        },
+        {
+            "code": "USRS69",
+            "name": "Initiation au marketing"
         }
     ],
     "students": [
