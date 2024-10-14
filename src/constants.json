@@ -143,6 +143,14 @@
         {
             "code": "USRS69",
             "name": "Initiation au marketing"
+        },
+        {
+            "code": "URIMA3",
+            "name": "Atelier Alternance FISA Année 3"
+        },
+        {
+            "code": "USRS6J",
+            "name": "Projet en entreprise S5"
         }
     ],
     "students": [
