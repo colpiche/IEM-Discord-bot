@@ -145,6 +145,14 @@
             "name": "Initiation au marketing"
         },
         {
+            "code": "URIMA3",
+            "name": "Atelier Alternance FISA Année 3"
+        },
+        {
+            "code": "USRS6J",
+            "name": "Projet en entreprise S5"
+        },
+        {
             "code": "USRS6F",
             "name": "Télévision et cinéma numérique"
         }
